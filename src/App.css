@@ -1,38 +1,288 @@
+body {
+    background-color: #d097ff;
+}
+
 .App {
-  text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 98vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Menu {
+    position: relative;
+    background-image: linear-gradient(#7830ad 30%, #cab2dc 50%);
+    z-index: 1;
+    width: 25%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 7px #9867c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    font-size: 200%;
+    transition: background 1s;
+    color: #7830ad;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Menu::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(#cab2dc 30%, #7830ad 50%);
+    z-index: -1;
+    transition: all 0.5s linear;
+    opacity: 0;
+    color: #7830ad;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Menu:hover::before {
+    opacity: 1;
+    color: #7830ad;
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.endScreen {
+    padding-top: 2vh;
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 7px #9867c1;
+    background: linear-gradient(#7830ad 30%, #ddc6ed 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.Quiz {
+    width: 25%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 7px #9867c1;
+    background: linear-gradient(#7830ad 30%, #ddc6ed 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Menu button,
+.Quiz button,
+.endScreen button {
+    width: 75%;
+    height: 50px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #f2b550;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.Quiz button:hover {
+    width: 75%;
+    height: 50px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #fcbd58;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.Menu,
+.Quiz,
+.endScreen {
+    color: white;
+    text-align: center;
+    border: 8px solid #ddc6ed;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+.Quiz h1 {
+    margin-bottom: 40%;
+}
+.endScreenHeader {
+    font-size: 500%;
+    margin-top: 90%;
+}
+.endScreenScore {
+    font-size: 600%;
+    margin-bottom: 10%;
+    color: black;
+}
+.mainHeader {
+    font-size: 400%;
+    font-family: cursive;
+    margin-bottom: 1vh;
+    margin-top: 0;
+    margin-left: 1vw;
+}
+.giveUpButton {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    top: 1vh;
+    left: 0vw;
+}
+.giveUp {
+    width: 26vw;
+    height: 15vh;
+    background-color: #7830ad;
+    border: none;
+    border-radius: 15px;
+    border: 4px solid white;
+    font-size: 3vw;
+    font-weight: 700;
+    color: #ddc6ed;
+}
+.giveUp:hover {
+    background-color: #843cb8;
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    top: 92vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+    width: 100vw;
+    height: 4vh;
+}
+.aboutMe {
+    background-color: #7830ad;
+    border: none;
+    border-radius: 7px;
+    width: 16vw;
+    height: 6vh;
+    font-size: 3vh;
+    padding: 1vh;
+    color: white;
+}
+.aboutMe:hover {
+    background-color: #863bbb;
+    cursor: pointer;
+}
+
+.aboutContainer {
+    width: 40%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 7px #9867c1;
+    background: linear-gradient(#7830ad 30%, #ddc6ed 50%);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    padding: 2%;
+    color: white;
+    text-align: center;
+    border: 8px solid #ddc6ed;
+}
+
+.profileImage {
+    position: fixed;
+    width: 20%;
+    top: 14vh;
+    left: 30vw;
+    border-radius: 50%;
+    border: 4px solid #021a1f;
+}
+.informationAboutMe {
+    position: fixed;
+    top: 64vh;
+    width: 30vw;
+    border-left: 4px solid #7830ad;
+    padding-left: 1vw;
+    font-size: 3vh;
+    text-align: left;
+    color: #9867c1;
+}
+.name {
+    position: fixed;
+    top: 54vh;
+    font-size: 4vh;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #7830ad;
+}
+.links {
+    display: flex;
+    flex-flow: column;
+}
+.linkedIn,
+.gitHub {
+    width: 26vw;
+    height: 15vh;
+    background-color: #7830ad;
+    border: none;
+    border-radius: 15px;
+    border: 4px solid white;
+    font-size: 3vw;
+    font-weight: 700;
+    color: #ddc6ed;
+    margin-bottom: 10px;
+}
+.linkedIn:hover,
+.gitHub:hover {
+    cursor: pointer;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2vh;
+    column-gap: 2vw;
+}
+
+.questionResult {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #b78ed5;
+    padding: 1vh;
+    font-size: x-large;
+    border-radius: 7px;
+    border: 5px solid #cda9e8;
+    color: #021a1f;
+    font-weight: 700;
+}
+
+.restartButton {
+    width: 12vw;
+    height: 18vh;
+    background-color: #7830ad;
+    border: none;
+    border-radius: 15px;
+    border: 4px solid white;
+    font-size: 2vw;
+    font-weight: 700;
+    color: #ddc6ed;
+    margin-bottom: 10px;
+}
+.scrollDown {
+    color: black;
 }
