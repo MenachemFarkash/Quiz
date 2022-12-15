@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfilePicture from '../Components/ProfilePicture.jpg';
 function AboutMe() {
+    // ? a very simple about me that contains a photo of me and some information about the project and me.
     return (
         <div className="aboutContainer">
             <div>
